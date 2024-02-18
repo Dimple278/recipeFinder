@@ -22,7 +22,7 @@ const RecipeList = ({ meals }) => {
     <div className="recipe-list">
       {selectedRecipe ? (
         <RecipeDetails recipe={selectedRecipe} onBackClick={handleBackClick} />
-      ) : (
+      ) : meals && meals.length > 0 ? (
         meals.map((meal, index) => (
           <Card key={index} className="recipe-card" sx={{ maxWidth: 345 }}>
             <CardMedia
@@ -48,6 +48,8 @@ const RecipeList = ({ meals }) => {
             </CardActions>
           </Card>
         ))
+      ) : (
+        <p style={{ color: "red" }}>Recipe not found.</p>
       )}
     </div>
   );
