@@ -16,10 +16,18 @@ const RecipeDetails = ({ recipe, onBackClick }) => {
 
   return (
     <div className="recipe-details">
+      <span>
+        <img
+          src={recipe.strMealThumb}
+          alt={recipe.strMeal}
+          style={{ width: "30%", height: "50%", marginBottom: "20px" }}
+        />
+        <Button onClick={onBackClick}>Back</Button>
+      </span>
+
       <h2>{recipe.strMeal}</h2>
       <p>Category: {recipe.strCategory}</p>
       <p>Area: {recipe.strArea}</p>
-      <p>Instructions: {recipe.strInstructions}</p>
 
       <h3>Ingredients:</h3>
       <ul>
@@ -27,7 +35,7 @@ const RecipeDetails = ({ recipe, onBackClick }) => {
           <li key={index}>{ingredient}</li>
         ))}
       </ul>
-      <Button onClick={onBackClick}>Back</Button>
+      <p>Instructions: {recipe.strInstructions}</p>
     </div>
   );
 };

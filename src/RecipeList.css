@@ -1,0 +1,18 @@
+/* RecipeList.css */
+
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.recipe-card {
+  flex: 0 0 calc(32.333% - 20px); /* Adjust the width as needed */
+  max-width: calc(32.333% - 20px); /* Adjust the width as needed */
+  margin-top: 16px;
+  height: 400px;
+}
+.recipe-card .MuiCardMedia-root {
+  height: 240px; /* Adjust the height of the image as needed */
+}
